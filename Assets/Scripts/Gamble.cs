@@ -9,17 +9,20 @@ public class Gamble : MonoBehaviour
 
     [SerializeField]
     public GameObject player;
+
+    [SerializeField]
+    public float scaleFactor;
     private bool isInteractable = false;
     private bool alreadyPulled = false;
     // Update is called once per frame
     void Update()
     {
         if (isInteractable && Input.GetKeyDown(KeyCode.E) && !alreadyPulled) {
-            pulled.transform.localScale = new Vector3(.1f, .1f, .1f);
-            pulled.transform.position = (Camera.main.transform.forward * 1) + Camera.main.transform.position;
+            pulled.transform.localScale = new Vector3(scaleFactor * pulled.transform.localScale.x, scaleFactor * pulled.transform.localScale.y, scaleFactor * pulled.transform.localScale.z);
+            pulled.transform.position = (Camera.main.transform.forward * 6) + Camera.main.transform.position;
             pulled.transform.rotation = player.transform.rotation * Quaternion.Euler(0f, -90f, 0f);
             // Debug.Log("Wahoo");
-            // alreadyPulled = true;
+            alreadyPulled = true;
 
         }
     }
