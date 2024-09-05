@@ -3,22 +3,6 @@ using UnityEngine.Events;
 
 public class AreaUnlock : MonoBehaviour
 {
-    // THIS IS A TEMPORARY SOLUTION!!!
-    // Create enum for different hospital days
-    private enum HospitalDay
-    {
-        DayOne,
-        DayTwo,
-        DayThree,
-        DayFour,
-        DayFive,
-        DaySix,
-        DaySeven
-    }
-
-    // Store current day
-    private HospitalDay currentDay;
-
     // Store Day Change event
     private UnityEvent m_dayChange;
 
@@ -41,9 +25,10 @@ public class AreaUnlock : MonoBehaviour
 
     void Update()
     {
-        // If 'R' was pressed and Day Change event is not null, evoke the event
+        // If 'R' was pressed and Day Change event is not null, invoke the event
         if (Input.GetKeyDown(KeyCode.R) && m_dayChange != null)
         {
+            GameManager.instance.nextDay();
             m_dayChange.Invoke();
         }
     }
@@ -51,29 +36,22 @@ public class AreaUnlock : MonoBehaviour
     // DayChange event callback that changes the day and checks if any area should be unlocked
     void DayChange()
     {
-        // If we haven't reached the last day, change the current day to the next
-        if (currentDay != HospitalDay.DaySeven)
-        {
-            ++currentDay;
-        }
-        
-        Debug.Log(currentDay);
         // If third day, unlock Library
-        if (currentDay == HospitalDay.DayThree)
+        if (GameManager.instance.currentDay == 2)
         {
             Destroy(libraryDoor);
             Debug.Log("Library has been unlocked!");
         }
 
         // If fourth day, unlock Play Room
-        if (currentDay == HospitalDay.DayFour)
+        if (GameManager.instance.currentDay == 3)
         {
             Destroy(playRoomDoor);
             Debug.Log("Play Room has been unlocked!");
         }
 
         // If fifth day, unlock Waiting Room
-        if (currentDay == HospitalDay.DayFive)
+        if (GameManager.instance.currentDay == 4)
         {
             Destroy(waitingRoomDoor);
             Debug.Log("Waiting Room has been unlocked.");
