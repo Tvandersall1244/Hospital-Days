@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     public int currentDay;
+    public bool coinMissionComplete;
 
     private void Awake() {
         CreateSingleton();

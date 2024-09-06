@@ -5,6 +5,7 @@ public class BedSleep : MonoBehaviour
 {
     private bool isPlayerNear = false;
     private FadeScreen fadeController;
+    private GameManager gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,11 +26,13 @@ public class BedSleep : MonoBehaviour
     void Start()
     {
         fadeController = FindObjectOfType<FadeScreen>(); // Get the FadeScreen component
+        gameManager = GameManager.instance;
+        Debug.Log(gameManager);
     }
 
     void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E)) // If player is near bed and presses E
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E) && gameManager.coinMissionComplete) // If player is near bed and presses E
         {
             StartCoroutine(HandleBedSleep());
         }
@@ -42,7 +45,7 @@ public class BedSleep : MonoBehaviour
         yield return StartCoroutine(fadeController.FadeIn());
 
         // Trigger the next day in the game
-        //GameManager.instance.nextDay();
+        gameManager.nextDay();
         yield return new WaitForSeconds(3f);
 
         // Fade back to the game view
