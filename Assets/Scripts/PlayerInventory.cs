@@ -17,22 +17,13 @@ public class PlayerInventory : MonoBehaviour
         {
             if (Input.GetKeyDown(i.ToString()))
             {
-                InventoryItem selectedItem = inventory.GetItem(i - 1);
-                if (selectedItem != null)
-                {
-                    Debug.Log("Selected item: " + selectedItem.name);
-                    SpawnItemInFrontOfPlayer(selectedItem);
-
-                    // Remove the item after use
-                    inventory.items.RemoveAt(i - 1);
-                    Debug.Log(selectedItem.name + " has been used and removed from the inventory.");
-                    break;
-                }
+                inventory.UseItem(i - 1);
+                break;
             }
         }
     }
 
-    void SpawnItemInFrontOfPlayer(InventoryItem item)
+    public void SpawnItemInFrontOfPlayer(InventoryItem item)
     {
         if (item.prefab != null)
         {
@@ -44,6 +35,9 @@ public class PlayerInventory : MonoBehaviour
 
             // Instantiate the item at the spawn position
             GameObject spawnedItem = Instantiate(item.prefab, spawnPosition, Quaternion.identity);
+
+            // Ensure the spawned item is enabled
+            spawnedItem.SetActive(true);
 
             Debug.Log(item.name + " has been spawned in front of the player.");
         }
