@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Chizoba/Menu.unity
+    guid: 0135d2e451d431b49a86e369b1031b6e
+  - enabled: 1
+    path: Assets/Scenes/Chizoba/MainScene.unity
+    guid: c62c40b6edb20af40b9c05c13c3f6077
   m_configObjects: {}
