@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-	// Todo: Inventory implementation
-	
 	private Rigidbody rb;
 	private Transform objectGrabPoint;
 	
@@ -20,7 +18,14 @@ public class ObjectGrabbable : MonoBehaviour
 	{
 		this.objectGrabPoint = objectGrabPoint;
 		rb.useGravity = false;
+		rb.isKinematic = true;
+	}
 
+	public void Drop()
+	{
+		this.objectGrabPoint = null;
+		rb.useGravity = true;
+		rb.isKinematic = false;
 	}
 
 	private void FixedUpdate()

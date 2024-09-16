@@ -855,7 +855,7 @@ MonoBehaviour:
   objectGrabPoint: {fileID: 857490744}
   pickUpLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!1001 &141895115
 PrefabInstance:
   m_ObjectHideFlags: 0
