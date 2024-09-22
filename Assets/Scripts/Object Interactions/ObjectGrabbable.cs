@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
+	// everything that is grabbable should be able to put in your inventory
 	private Rigidbody rb;
 	private Transform objectGrabPoint;
+	
+	[SerializeField] private InventoryItem inventoryItem;
+	public InventoryItem GetInventoryItem => inventoryItem;
 	
 	private float speed = 10f;
 	private void Awake()
@@ -28,6 +32,12 @@ public class ObjectGrabbable : MonoBehaviour
 		rb.isKinematic = false;
 	}
 
+	public void Remove()
+	{
+		this.objectGrabPoint = null;
+		//delete object from existence when put into inventory
+	}
+
 	private void FixedUpdate()
 	{
 		if (objectGrabPoint != null)
@@ -36,4 +46,5 @@ public class ObjectGrabbable : MonoBehaviour
 			rb.MovePosition(newPosition);
 		}
 	}
+	
 }
