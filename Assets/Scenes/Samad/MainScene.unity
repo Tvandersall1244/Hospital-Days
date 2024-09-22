@@ -856,6 +856,7 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  inventory: {fileID: 0}
 --- !u!1001 &141895115
 PrefabInstance:
   m_ObjectHideFlags: 0
