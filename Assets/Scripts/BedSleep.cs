@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class BedSleep : MonoBehaviour
@@ -27,7 +28,6 @@ public class BedSleep : MonoBehaviour
     {
         fadeController = FindObjectOfType<FadeScreen>(); // Get the FadeScreen component
         gameManager = GameManager.instance;
-        Debug.Log(gameManager);
     }
 
     void Update()
@@ -47,6 +47,10 @@ public class BedSleep : MonoBehaviour
         // Trigger the next day in the game
         gameManager.nextDay();
         yield return new WaitForSeconds(3f);
+
+        // Save the game
+        SaveSystem.Save();
+        // SaveSystem.Load();
 
         // Fade back to the game view
         yield return StartCoroutine(fadeController.FadeOut());
