@@ -12,6 +12,7 @@ public class BBInteractor : MonoBehaviour
 {
     public Transform InteractorSource; // Reference to Transform in which interacting Ray will be casted
     public float InteractRange; // Length of interacting Raycast
+    public GameObject GambleMinigame; // REMOVE LATER: Gamble Minigame Object
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,10 @@ public class BBInteractor : MonoBehaviour
                 {
                     // Interact with object
                     interactObj.Interact();
+                    // REMOVE LATER: Testing Gambling Minigame
+                    GambleMinigame.gameObject.SetActive(true);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
         }

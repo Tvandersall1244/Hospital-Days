@@ -1,0 +1,38 @@
+.header {
+    align-items: auto;
+    justify-content: flex-start;
+    align-self: center;
+    font-size: 20px;
+    color: rgb(255, 0, 0);
+}
+
+.button {
+    width: 24%;
+    height: 24%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition-duration: 0.25s;
+    background-image: url('project://database/Assets/Textures/tempGambleUI.png?fileID=2800000&guid=2305351828e30f946b5a5e4f50646537&type=3#tempGambleUI');
+}
+
+.button:hover {
+    background-color: rgba(128, 128, 128, 0);
+    -unity-background-image-tint-color: rgb(195, 195, 195);
+    scale: 1.1 1.1;
+}
+
+.hbox {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 80%;
+    height: 70%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    justify-content: flex-start;
+    align-self: center;
+}
