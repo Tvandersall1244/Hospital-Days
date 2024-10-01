@@ -580,9 +580,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPosition: {fileID: 345858374}
   objectGrabPoint: {fileID: 330906426}
+<<<<<<< Updated upstream
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 0
+=======
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  inventory: {fileID: 1124417076}
+>>>>>>> Stashed changes
 --- !u!1001 &141895115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -995,6 +1002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_text: 'Why Dora The Explorer Can Beat Goku, Superman, & One PUnch Man
 
     First
@@ -1010,6 +1018,12 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9173bbc8117812b4d86df4e3f20c9298, type: 2}
   m_sharedMaterial: {fileID: 8469110412672927958, guid: 9173bbc8117812b4d86df4e3f20c9298, type: 2}
+=======
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+>>>>>>> Stashed changes
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1069,7 +1083,11 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
+<<<<<<< Updated upstream
   m_margin: {x: 0, y: 0, z: -262.18408, w: 0}
+=======
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+>>>>>>> Stashed changes
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4971,6 +4989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67a9314cb20ef740b5beecf1c78e1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  inventoryItem: {fileID: 1964955918}
+>>>>>>> Stashed changes
 --- !u!54 &1964955923
 Rigidbody:
   m_ObjectHideFlags: 0
