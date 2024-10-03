@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class MainStoryGacha : MonoBehaviour
 {
     // Start is called before the first frame update
     private GameManager gameManager;
