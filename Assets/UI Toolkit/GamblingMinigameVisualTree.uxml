@@ -1,24 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/GamblingMinigameStyle.uss?fileID=7433441132597879392&amp;guid=e398dad6d26acec4ca0f8a419396b58d&amp;type=3#GamblingMinigameStyle" />
-    <ui:VisualElement name="Container" style="flex-grow: 1;">
+    <ui:VisualElement name="Container" style="flex-grow: 1; visibility: visible;">
         <ui:Label tabindex="-1" text="Let&apos;s Go Gambling!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Header" class="header" />
-        <ui:VisualElement name="ButtonContainer" class="hbox" style="flex-grow: 1;">
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton2" class="button" />
-            <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton3" class="button" />
-            <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton4" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton5" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton6" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton7" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton8" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton9" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton10" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton11" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton12" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton13" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton14" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton15" class="button" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton16" class="button" />
-        </ui:VisualElement>
+        <ui:VisualElement name="ButtonContainer" class="hbox" style="flex-grow: 1;" />
+        <ui:VisualElement name="Footer" class="footer hbox" style="flex-grow: 1; align-self: center;" />
     </ui:VisualElement>
 </ui:UXML>

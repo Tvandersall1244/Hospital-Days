@@ -35,10 +35,6 @@ public class BBInteractor : MonoBehaviour
                 {
                     // Interact with object
                     interactObj.Interact();
-                    // REMOVE LATER: Testing Gambling Minigame
-                    GambleMinigame.gameObject.SetActive(true);
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
                 }
             }
         }

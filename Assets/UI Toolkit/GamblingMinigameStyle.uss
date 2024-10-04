@@ -4,17 +4,20 @@
     align-self: center;
     font-size: 20px;
     color: rgb(255, 0, 0);
+    width: 80%;
+    height: 10%;
+    -unity-text-align: middle-center;
 }
 
 .button {
-    width: 24%;
-    height: 24%;
+    width: 100%;
+    height: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     transition-duration: 0.25s;
-    background-image: url('project://database/Assets/Textures/tempGambleUI.png?fileID=2800000&guid=2305351828e30f946b5a5e4f50646537&type=3#tempGambleUI');
+    background-image: url('project://database/Assets/Resources/tempGambleUI.png?fileID=2800000&guid=2305351828e30f946b5a5e4f50646537&type=3#tempGambleUI');
 }
 
 .button:hover {
@@ -35,4 +38,36 @@
     padding-left: 10px;
     justify-content: flex-start;
     align-self: center;
+}
+
+.multiplier {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    font-size: 50px;
+}
+
+.gridelement {
+    width: 24%;
+    height: 24%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.footer {
+    width: 80%;
+    height: 20%;
+    -unity-text-align: middle-center;
 }
