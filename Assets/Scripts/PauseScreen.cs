@@ -31,6 +31,7 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = 1f;
         gameCamera.GetComponent<CameraMovement>().enabled = true;
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void PauseGame() 
@@ -39,5 +40,6 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = 0f;
         gameCamera.GetComponent<CameraMovement>().enabled = false;
         isPaused = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }
