@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;

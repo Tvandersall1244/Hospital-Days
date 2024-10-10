@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -37,5 +38,15 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 getPlayerPosition() {
         return rb.position;
+    }
+
+    [YarnCommand("Freeze")]
+    public void inDialogue() {
+        enabled = false;
+    }
+
+    [YarnCommand("Unfreeze")]
+    public void finDialogue() {
+        enabled = true;
     }
 }
