@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     public float moveSpeed;
+
+    //public Transform target;
 
     Rigidbody rb;
 
@@ -27,6 +30,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void Walk() {
+        if (DayManager.Instance.IsDay7()) {
+            rb.velocity = transform.forward * moveSpeed * 0.5f;
+            return;
+        }
         Vector3 playerVelocity = new Vector3(moveVal.x * moveSpeed, rb.velocity.y, moveVal.y * moveSpeed);
         rb.velocity = transform.TransformDirection(playerVelocity);
     }
@@ -37,5 +44,13 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 getPlayerPosition() {
         return rb.position;
+    }
+
+    void OnTriggerEnter(Collider col) {
+        if(col.gameObject.tag == "GachaMachine" && DayManager.Instance.IsDay7()) {
+            Debug.Log("hit");
+            SceneManager.LoadScene(1);
+        }
+        Debug.Log(col.gameObject.name);
     }
 }
