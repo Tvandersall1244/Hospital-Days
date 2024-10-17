@@ -1,6 +1,6 @@
 ﻿title: Start
 tags:
-position: -77,-22
+position: -25,-36
 ---
 <<Freeze Torri>>
 ???: Oh, you're finally awake.... Good, I started to get worried. I was not looking forward to another code blue.
@@ -26,14 +26,14 @@ position: -77,-22
 <<Unfreeze Torri>>
 ===
 
-title: Oh
-position: 4,207
+title: bed
+position: 197,200
 ---
 Narrator: Yeah, fun, right?
 ===
 
-title: Unity
-position: 189,-22
+title: gacha
+position: 258,-34
 ---
 Narrator: Someone read the Beginner's Guide!
 ===

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Yarn.Unity;
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
 
 
@@ -13,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject[] waypoints;
     private int currentWaypoint = 0;
     public bool notWaiting = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class NewBehaviourScript : MonoBehaviour
             notWaiting = true;
             Debug.Log("waiting");
         }
+
         
     }
 
