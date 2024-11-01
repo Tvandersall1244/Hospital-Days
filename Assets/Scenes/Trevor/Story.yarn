@@ -1,24 +1,39 @@
 ﻿title: Start
 tags:
-position: -77,-22
+position: -25,-36
 ---
-Narrator: Oh, hello!
-    -> Hi, where am I?
-        Narrator: You're in Unity!
-            -> Oh.
-                <<jump Oh>>
-            -> How did I get here?
-                <<jump Unity>>
+<<Freeze Torri>>
+???: Oh, you're finally awake.... Good, I started to get worried. I was not looking forward to another code blue.
+???: Hmmm... you look confused... I guess I can spare the time to say what happened to you.
+???: You got injured when you and your parents got hit by truck ku- ehem, I mean when you and your parents got hit by a truck on the highway after the driver lost control.
+???: You were brought here along with your parents... who ended up in a worse state than you did.
+    -> What happened to my parents?! Did they die? Where are they?
+        Torri: What happened to my parents?! Did they die? Where are they?
+        ???: Since your parents were driving, they got the brunt of the force from the crash….. So, they're on another floor in intensive care. Honestly, I couldn't tell you what's going on down there. 
+    -> What do you mean by truck-kun? Isn't that like an anime thing?
+        Torri: What do you mean by truck-kun? Isn't that like an anime thing?
+        ???: ....
+        ???: Anyways, your parents were driving, so they got the brunt of the force from the crash….. they're on another floor in intensive care. Honestly, I couldn't tell you what's going on down there. 
+
+???: Your injury probably isn't as bad as your parents... but we should still get it checked out.
+???: Follow me.
+    -> Wait, where are we going? I'm feeling a bit disoriented right now, can I hold onto you?
+        Torri: Wait, where are we going? I'm feeling a bit disoriented right now, can I hold onto you?
+        ???: Uhhh, yeah sure. Here, grab on, it'll only take a bit to get to the x-ray room. Oh, but watch out for your right arm, it's looking a bit beat up.
+    -> Can I not go see my parents now? I don't have time to worry about myself!
+        Torri: Can I not go see my parents now? I don't have time to worry about myself!
+        ???: Your parents will be fine under their care, but your right arm's probably in bad shape, so we need to take you to get an x-ray.
+<<Unfreeze Torri>>
 ===
 
-title: Oh
-position: 4,207
+title: bed
+position: 197,200
 ---
 Narrator: Yeah, fun, right?
 ===
 
-title: Unity
-position: 189,-22
+title: gacha
+position: 258,-34
 ---
 Narrator: Someone read the Beginner's Guide!
 ===
