@@ -459,25 +459,21 @@ public class GamblingMinigameEvents : MonoBehaviour
 
     private void OnDisable()
     {
-        // Get buttons to disable callback for
-        List<Button> buttons = _document.rootVisualElement.Query<Button>().ToList();
+        // Get gambling buttons to unregistor callback for
+        List<Button> buttons = _gridContainer.Query<Button>().ToList();
 
         // Unregister callback for each one
         for (int i = 0; i < buttons.Count; i++)
         {
             _gridContainer[i].UnregisterCallback<ClickEvent>(ShowMultiplier);
         }
+
+        // Unregister callback for Cash Out button
+        _cashOut.UnregisterCallback<ClickEvent>(CashOut);
     }
 
     void Update()
     {
-        // If 'F' is pressed, no more gambling :(
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            _container.style.visibility = Visibility.Hidden;
-            UnityEngine.Cursor.visible = false;
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        }
         // If 'C' is pressed, GAMBLING TIME!!!! :D
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -486,6 +482,11 @@ public class GamblingMinigameEvents : MonoBehaviour
             _container.style.visibility = Visibility.Visible;
             UnityEngine.Cursor.visible = true;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
+
+            // Make sure player cannot move or look around
+            GameObject.Find("test character model").GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GameObject.Find("test character model").GetComponent<PlayerMovement>().enabled = false;
+            GameObject.Find("Camera").GetComponent<CameraMovement>().enabled = false;
         }
     }
 
@@ -512,9 +513,15 @@ public class GamblingMinigameEvents : MonoBehaviour
         if (newCurr > int.Parse(_goalScore.text))
         {
             Debug.Log("You gambled too hard. :(");
+
+            // Hide gambling minigame
             _container.style.visibility = Visibility.Hidden;
             UnityEngine.Cursor.visible = false;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+            // Let player move and look around
+            GameObject.Find("test character model").GetComponent<PlayerMovement>().enabled = true;
+            GameObject.Find("Camera").GetComponent<CameraMovement>().enabled = true;
         }
 
         // Hide the button
@@ -563,5 +570,9 @@ public class GamblingMinigameEvents : MonoBehaviour
         _container.style.visibility = Visibility.Hidden;
         UnityEngine.Cursor.visible = false;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+        // Let player move and look around
+        GameObject.Find("test character model").GetComponent<PlayerMovement>().enabled = true;
+        GameObject.Find("Camera").GetComponent<CameraMovement>().enabled = true;
     }
 }
