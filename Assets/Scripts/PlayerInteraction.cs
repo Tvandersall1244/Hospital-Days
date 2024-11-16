@@ -20,7 +20,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         // adding the layer mask here creates null errors when you interact with stuff not in layer, is fine to have??
         // physics raycast every frame to try and incorporate UI elements to interactions
-        Physics.Raycast(cameraPosition.position, cameraPosition.forward, out RaycastHit raycastHit, interactRange, interactLayerMask);
+        Physics.Raycast(cameraPosition.position, cameraPosition.forward, out RaycastHit raycastHit, interactRange);
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (objectGrabbable == null)
@@ -54,32 +54,4 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
-    // public IInteractable GetInteractableObject()
-    // {
-    //     List<IInteractable> interactables = new List<IInteractable>();
-    //     Collider[] colliders = Physics.OverlapSphere(transform.position, interactRange);
-    //     foreach (Collider collider in colliders)
-    //     {
-    //         if (collider.TryGetComponent(out IInteractable interactable))
-    //         {
-    //             interactables.Add(interactable);   
-    //         }
-    //     }
-    //
-    //     IInteractable closestInterable = null;
-    //     foreach (IInteractable interactable in interactables)
-    //     {
-    //         if (closestInterable == null)
-    //         {
-    //             closestInterable = interactable;
-    //         }
-    //         else if (Vector3.Distance(transform.position, interactable.GetTransform().position) 
-    //                  < Vector3.Distance(transform.position, closestInterable.GetTransform().position))
-    //         {
-    //             closestInterable = interactable;
-    //         }
-    //     }
-    //
-    //     return closestInterable;
-    // }
 }

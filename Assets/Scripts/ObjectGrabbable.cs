@@ -7,6 +7,7 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
 {
 	// everything that is grabbable should be able to put in your inventory
 	private Rigidbody rb;
+    private Collider col;
 	private Transform objectGrabPoint;
 	
 	[SerializeField] private InventoryItem inventoryItem;
@@ -16,6 +17,7 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
 	private bool holding = false;
 	private void Awake()
 	{
+		col = GetComponent<Collider>();
 		rb = GetComponent<Rigidbody>();
 	}
 	
@@ -38,20 +40,21 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
 	{
 		this.objectGrabPoint = objectGrabPoint;
 		rb.useGravity = false;
-		rb.isKinematic = true;
+		col.enabled = false;
 	}
 
 	public void Drop()
 	{
 		this.objectGrabPoint = null;
 		rb.useGravity = true;
-		rb.isKinematic = false;
+		col.enabled = true;
 	}
 
 	public void Remove()
 	{
 		this.objectGrabPoint = null;
-		gameObject.SetActive(false);
+		Destroy(gameObject);
+		// gameObject.SetActive(false); disable instead of destroying and reinstantiating, don't think this is useful
 	}
 
 	private void FixedUpdate()

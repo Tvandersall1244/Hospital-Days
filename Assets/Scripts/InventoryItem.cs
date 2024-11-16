@@ -6,5 +6,4 @@ public class InventoryItem : MonoBehaviour
     public Sprite icon;
     public int id;
     public GameObject prefab;
-    
 }
