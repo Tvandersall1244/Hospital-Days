@@ -57,7 +57,6 @@ public class Inventory : MonoBehaviour
         if (index < items.Count && items[index] != null)
         {
             playerInventory.SpawnItemInFrontOfPlayer(items[index]);
-
             items.RemoveAt(index);
             UpdateInventoryUI();
         }

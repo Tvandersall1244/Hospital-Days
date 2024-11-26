@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        HandleInventoryInput();
+        // HandleInventoryInput();
     }
 
     void HandleInventoryInput()
