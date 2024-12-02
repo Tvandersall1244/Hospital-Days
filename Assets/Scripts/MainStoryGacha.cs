@@ -28,8 +28,8 @@ public class MainStoryGacha : MonoBehaviour
         gameManager = GameManager.instance;
         //currentDay = gameManager.currentDay;
         //hasCoin = gameManager.coinMissionComplete;
-        currentDay = 3;
-        hasCoin = true;
+        currentDay = 3; //to comment out
+        hasCoin = true; //to comment out
         usedCoin = false;
     }
 
